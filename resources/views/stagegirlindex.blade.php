@@ -28,9 +28,9 @@
         @foreach($stagegirls as $girl)
             <tr>
                 <td>{{$girl->id}}</td>
-                <td>{{$girl->name}}</td>
-                <td>{{$girl->class}}</td>
-                <td>{{$girl->weapon}}</td>
+                <td>{{$girl->nama}}</td>
+                <td>{{$girl->angkatan}}</td>
+                <td>{{$girl->senjata}}</td>
                 <td><a href="{{action('StageGirlController@edit', $girl->id)}}" class="btn btn-warning">Edit</a></td>
                 <td>
                     <form action="{{action('StageGirlController@destroy', $girl->id)}}" method="post">

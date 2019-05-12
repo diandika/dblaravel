@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use App\StageGirl;
 use App\SeishoGirl;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 
 class StageGirlController extends Controller
 {
@@ -26,7 +28,11 @@ class StageGirlController extends Controller
     {
         $seisho=SeishoGirl::all();
         $stage=StageGirl::all();
-        $stagegirls = $seisho->merge($stage);
+        //$butai = DB::table('girl')->get();
+        $butai = User::all();
+        Log::info($butai);
+        $stagegirls = $seisho->merge($butai);
+        Log::info($stagegirls);
         return view('stagegirlindex',compact('stagegirls'));
     }
 
