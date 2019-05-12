@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Butai;
 use App\User;
 use Illuminate\Http\Request;
 use App\StageGirl;
@@ -29,9 +30,8 @@ class StageGirlController extends Controller
         $seisho=SeishoGirl::all();
         $stage=StageGirl::all();
         //$butai = DB::table('girl')->get();
-        $butai = User::all();
-        Log::info($butai);
-        $stagegirls = $seisho->merge($butai);
+        $butai = Butai::all();
+        $stagegirls = $seisho->merge($butai)->merge($stage);
         Log::info($stagegirls);
         return view('stagegirlindex',compact('stagegirls'));
     }
