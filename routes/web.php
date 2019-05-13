@@ -21,3 +21,4 @@ Route::get('stagegirl','StageGirlController@index');
 Route::get('edit/{id}','StageGirlController@edit');
 Route::post('edit/{id}','StageGirlController@update');
 Route::delete('{id}','StageGirlController@destroy');
+Route::post('select','StageGirlController@select');

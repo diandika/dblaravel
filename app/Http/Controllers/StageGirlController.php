@@ -57,4 +57,29 @@ class StageGirlController extends Controller
         $stagegirl->delete();
         return redirect('stagegirl')->with('success', 'Stage girl deleted');
     }
+
+    public function select(Request $request){
+        $seisho=DB::connection('mongodb2')
+            ->collection('table1')
+            ->where('name', $request->get('stagegirlname'))
+            ->get();
+        /*$stage=DB::connection('mongodb')
+            ->collection('stage_girl')
+            ->where('name', $request->get('stagegirlname'))
+            ->get();
+        */
+        $stage = StageGirl::all()->where('name', '=', $request->get('stagegirlname'));
+        //$butai = DB::table('girl')->get();
+        $butai = DB::connection('pgsql')
+            ->table('girl')
+            ->select(DB::raw('*'))
+            ->where('nama', 'LIKE', '%'.$request->get('stagegirlname').'%')
+            ->get();
+        Log::info($butai);
+        Log::info($seisho);
+        Log::info(gettype($stage));
+        Log::info($request);
+        $stagegirls = $seisho->merge($butai)->merge($stage);
+        return view('stagegirlindex',compact('stagegirls'));
+    }
 }
