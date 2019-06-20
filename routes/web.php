@@ -15,10 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('add','StageGirlController@create');
-Route::post('add','StageGirlController@store');
-Route::get('stagegirl','StageGirlController@index');
-Route::get('edit/{id}','StageGirlController@edit');
-Route::post('edit/{id}','StageGirlController@update');
-Route::delete('{id}','StageGirlController@destroy');
-Route::post('select','StageGirlController@select');
+Route::get('hero', 'SelectHero@all');
