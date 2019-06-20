@@ -17,8 +17,8 @@
     </tr>
     </thead>
     <tbody>
-
     @foreach($hero as $h)
+        {{\Illuminate\Support\Facades\Log::info($h)}}
         <tr>
             <td>{{$h->id}}</td>
             <td>{{$h->name}}</td>

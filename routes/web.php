@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('hero', 'SelectHero@all');
+Route::post('select', 'QueryController@start');
