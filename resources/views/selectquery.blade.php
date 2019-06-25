@@ -10,42 +10,29 @@
 </head>
 <body>
 @include('header')
-<form method="post" action="{{url('select')}}">
+<form method="post" action="{{url('select')}}" >
     @csrf
 
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="form-group col-md-4">
-            <label for="condition">Select:</label>
-            <label>
-                <input type="text" class="form-control" name="attribute">
-            </label>
+    <div class="form-group row justify-content-center">
+        <label for="attribute" class="col-sm-2 col-form-label">Select</label>
+        <div>
+            <input type="text" class="form-control" name="attribute">
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="form-group col-md-4">
-            <label for="condition">From:</label>
-            <label>
-                <input type="text" class="form-control" name="table">
-            </label>
+    <div class="form-group row justify-content-center">
+        <label for="table" class="col-sm-2 col-form-label">From</label>
+        <div>
+            <input type="text" class="form-control" name="table">
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="form-group col-md-4">
-            <label for="condition">Where:</label>
-            <label>
-                <input type="text" class="form-control" name="condition">
-            </label>
+    <div class="form-group row justify-content-center">
+        <label for="condition" class="col-sm-2 col-form-label">Where</label>
+        <div>
+            <input type="text" class="form-control" name="condition">
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="form-group col-md-4">
-            <button type="submit" class="btn btn-success">Submit</button>
-        </div>
+    <div class="form-group d-flex justify-content-center">
+        <button type="submit" class="btn btn-success">Submit</button>
     </div>
 </form>
 </body>

@@ -13,36 +13,23 @@
 <form method="post" action="{{url('select')}}">
     @csrf
 
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="form-group col-md-4">
-            <label for="condition">Delete</label>
+        <div class="form-group row justify-content-center">
+            <label class="col-sm-2 col-form-label">Delete</label>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="form-group col-md-4">
-            <label for="condition">From:</label>
-            <label>
+        <div class="form-group row justify-content-center">
+            <label for="table" class="col-sm-2 col-form-label">From</label>
+            <div>
                 <input type="text" class="form-control" name="table">
-            </label>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="form-group col-md-4">
-            <label for="condition">Where:</label>
-            <label>
+        <div class="form-group row justify-content-center">
+            <label for="condition" class="col-sm-2 col-form-label">Where</label>
+            <div>
                 <input type="text" class="form-control" name="condition">
-            </label>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="form-group col-md-4">
-            <button type="submit" class="btn btn-success">Submit</button>
-        </div>
+    <div class="form-group d-flex justify-content-center">
+        <button type="submit" class="btn btn-success">Submit</button>
     </div>
 </form>
 </body>

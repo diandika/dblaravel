@@ -13,46 +13,31 @@
 <form method="post" action="{{url('select')}}">
     @csrf
 
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="form-group col-md-4">
-            <label for="condition">Update</label>
-        </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="form-group col-md-4">
-            <label for="condition">Table:</label>
-            <label>
+        <div class="form-group row justify-content-center">
+            <label class="col-sm-2 col-form-label">Update</label>
+        </div>
+        <div class="form-group row justify-content-center">
+            <label for="table" class="col-sm-2 col-form-label">Table</label>
+            <div>
                 <input type="text" class="form-control" name="table">
-            </label>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="form-group col-md-4">
-            <label for="condition">Set:</label>
-            <label>
+        <div class="form-group row justify-content-center">
+            <label for="set" class="col-sm-2 col-form-label">Set</label>
+            <div>
                 <input type="text" class="form-control" name="set">
-            </label>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="form-group col-md-4">
-            <label for="condition">Where:</label>
-            <label>
+        <div class="form-group row justify-content-center">
+            <label for="condition" class="col-sm-2 col-form-label">Where</label>
+            <div>
                 <input type="text" class="form-control" name="condition">
-            </label>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="form-group col-md-4">
+        <div class="form-group d-flex justify-content-center">
             <button type="submit" class="btn btn-success">Submit</button>
         </div>
-    </div>
 </form>
 </body>
 </html>
