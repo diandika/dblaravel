@@ -17,3 +17,7 @@ Route::get('/', function () {
 
 Route::get('hero', 'SelectHero@all');
 Route::post('select', 'QueryController@start');
+
+Route::get('select', 'QueryRoute@viewSelect');
+Route::get('update', 'QueryRoute@viewUpdate');
+Route::get('delete', 'QueryRoute@viewDelete');
